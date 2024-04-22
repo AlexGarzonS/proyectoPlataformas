@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="campo1">Nombre Producto</label>
+        <input type="text" class="form-control" id="campo1" formControlName="nombre" placeholder="Ingrese Nombre Producto" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="campo2">Descripcion Producto</label>
+        <input type="text" class="form-control" formControlName="descripcion" id="campo2" placeholder="ingrese Descripcion Producto" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="campo3">Precio Producto</label>
+        <input type="number" class="form-control" formControlName="precio" id="campo3" placeholder="Ingrese Precio Producto" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="campo4">Imagen Producto</label>
+        <input type="file" (change)="onChangeFile($event)" accept="image/*" formControlName="imagen" class="form-control" id="campo4" required>
+      </div>
+    </div>
+    <button mat-raised-button class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>
+
+
